@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "C/C++: clang++ build active file",
+      "command": "/usr/bin/clang++",
+      "args": [
+        "-std=c++17",
+        "-fdiagnostics-color=always",
+        "-Wall",
+        "-g",
+        "-I${workspaceFolder}/include",
+        "-L${workspaceFolder}/lib",
+        "${workspaceFolder}/src/glad.c",
+        "${workspaceFolder}/src/*.cpp",
+        "${workspaceFolder}/lib/libglfw.3.dylib",
+        "-o",
+        "${workspaceFolder}/main.exe",
+        "-framework",
+        "OpenGL",
+        "-Wl,-rpath,${workspaceFolder}/lib"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "compiler: /usr/bin/clang"
+    }
+  ]
+}
